@@ -1,12 +1,7 @@
 from rest_framework.viewsets import ModelViewSet
 
-from livraria.models import Editora, Autor, Livro
-from livraria.serializers import EditoraSerializer, AutorSerializer, LivroSerializer, LivroDetailSerializer, LivroListSerializer
-
-class EditoraViewSet(ModelViewSet):
-    queryset = Editora.objects.all()
-    serializer_class = EditoraSerializer
-
+from livraria.models import Autor, Livro
+from livraria.serializers import AutorSerializer, LivroSerializer, LivroDetailSerializer, LivroListSerializer
 
 class AutorViewSet(ModelViewSet):
     queryset = Autor.objects.all()
