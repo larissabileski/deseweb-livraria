@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'rest_framework',
-    "rest_framework_simplejwt",
+    'rest_framework_simplejwt',
+    'usuario',
     'livraria',
 ]
 
@@ -126,6 +127,8 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOW_ALL_ORIGINS = True
+
+AUTH_USER_MODEL = "usuario.Usuario"
 
 # REST_FRAMEWORK = {
 #     "DEFAULT_PERMISSION_CLASSES": [
