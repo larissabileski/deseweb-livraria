@@ -1,6 +1,8 @@
 from django.db import models
+
 from livraria.models import Autor, Categoria, Editora
 from uploader.models import Image
+
 
 class Livro(models.Model):
     titulo = models.CharField(max_length=255)
@@ -13,13 +15,11 @@ class Livro(models.Model):
     editora = models.ForeignKey(
         Editora, on_delete=models.PROTECT, related_name="livros"
     )
-    autores = models.ManyToManyField(
-        Autor, related_name="livros"
-    )
+    autores = models.ManyToManyField(Autor, related_name="livros")
 
     def __str__(self):
         return f"{self.titulo} ({self.quantidade})"
-    
+
     capa = models.ForeignKey(
         Image,
         related_name="+",
